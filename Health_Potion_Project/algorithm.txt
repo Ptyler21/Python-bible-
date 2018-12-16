@@ -1,0 +1,50 @@
+Desired state of the program 
+
+1. generate the health amount of the potion 
+	How to generate the random amount of Health? 
+	a. using the random module for python 
+	specifically a random integer so, something like:
+ 
+	healthPotionAmount = random.randint(1,100) 
+	
+	b.The amount of health lowers depending on the level	
+	
+	easyPotionAmount = random.randint(50,100)
+	mediumPotionAmount = random.randint(25,75) 
+	hardPotionAmount = random.randint(1,20) 
+
+	-then simply return all three of these in a function
+2. The character 
+	
+	No specific restriction on character variables
+	-nees a minimum of a name & an amount of health
+	a. variable for name
+	name = "Bob" 
+	
+	b. variable for health
+	
+	-The variable can also be random to save the hassle
+	
+	c. how to add the potion health to the characters current health
+	
+	-the difficulty needs to be set 
+	-the name can be made by input to the program
+	-health at start could also be set or randomized 
+	
+	something like this for a template:
+
+        def markup(name,health,diff):
+
+  print(str(name),int(health),str(diff))
+
+
+
+def main():
+    markup("mark",22,"hard")
+
+	
+3. Difficulty
+	The potion will give less amount of health at higher levels 
+	- looking for a way to give the character less and less health from the potion
+		 
+	
