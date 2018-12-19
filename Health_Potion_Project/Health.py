@@ -13,7 +13,7 @@ def character(charHealth,gameDifficulty):
     if "easy" == gameDifficulty:
         print(charHealth, "This is the current health value")
         return(charHealth + easyHealthAmount)
-    
+
     elif "medium" == gameDifficulty:
         print(charHealth, "This is the current health value")
         return(charHealth + mediumHealthAmount)
