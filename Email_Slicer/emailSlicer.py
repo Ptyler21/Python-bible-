@@ -1,5 +1,5 @@
 Email = input("please input your Email address: ")
-userName = Email[:Email.index("@")]
+userName = Email[:Email.index("@")].strip()
 domainName = Email[Email.index("@"):].strip("@")
 
 def slicerLeftAndRight(Email,userName,domainName):
