@@ -1,0 +1,11 @@
+What I would like for the program to do: 
+
+1. Ask the user for their email address 
+	i.e (Email = input("Please give your Email address"))
+2. Slice the email for the user name 
+	userName = Email[:@] 
+3. Slice the email for their domain name 
+	domainName = Email[@:]
+4. there will be an output message telling the user their username and domain name 
+	outPut = "Your username is {0} and your domain is {1}".format(userName,domainName) 
+
