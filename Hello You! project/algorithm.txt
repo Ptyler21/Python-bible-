@@ -1,0 +1,17 @@
+What I would like the program to do 
+
+1. Ask the user for their name,age,city, and hobby
+
+2. store each of those into variables
+
+3. form a sentence unique to any individual 
+
+	-ideally name,age,city,hobby
+
+	-there will be a base string that returns 
+		- "H1 {name} you are {age} years old, living in {city} and you like {hobby} 
+	
+	-how to insert str variables into a string? 
+		-.format method 
+		-c = input("give me a name")
+		"blah {1}".format(c)
