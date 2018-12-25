@@ -1,0 +1,18 @@
+What I would like for the program to do: 
+
+1. have a list prepopulated users 
+
+2. ask the user for a name 
+
+3. check if the name is IN the list 
+
+4. if the name is in the list notify the user 
+
+	-ask the user if they would like to delete the name 
+	-if yes, then call the remove element 
+	-if no, move on to the end of the program 
+
+5. if the name is not in the list
+	-ask the user if they would like to add the name
+	-if yes, call the list.append method 
+	-if no, move on to the end of the program 
