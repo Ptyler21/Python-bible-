@@ -1,0 +1,19 @@
+what I would like the program to do:
+
+1. users choose from a range of films
+
+-the films need to be stored in a data structure
+-each film has an age limit and seating limit
+-the films could be stored in a dictionary
+	-the movies would be the key
+	-the 1st value would be the age limit
+	-the second value could be the seat limit
+		-a second dictionary could be made of movie: {"age":int,"seat":int}
+
+2. then the program ask then for their age
+
+3. if they are old enough and if there are enough seats the user can watch the film
+
+4. if they are not old enough then they get a message telling them this
+
+5. if there are not enough seats then the user should pick another movie
