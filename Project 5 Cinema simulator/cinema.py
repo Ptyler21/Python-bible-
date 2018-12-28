@@ -7,14 +7,19 @@ movieDictionary = {
 
 while True:
 
-    userMovieChoice = input("please give me a movie: ")
-    userAge = int(input("please give me a number: "))
+    userMovieChoice = input("please give me a movie: ").strip().capitalize()
+    if userMovieChoice in movieDictionary.keys():
 
-    if userAge < movieDictionary[userMovieChoice]["age"]:
-        print("sorry you cannot watch this movie, please pick another")
+        userAge = int(input("please give me a number: ").strip())
 
-    elif userAge >= movieDictionary[userMovieChoice]["age"] and movieDictionary[userMovieChoice]["seats"] == 0:
-        print ("sorry there are not enough seats, please pick another movie")
+        if userAge < movieDictionary[userMovieChoice]["age"]:
+            print("sorry you cannot watch this movie, please pick another")
 
+        elif userAge >= movieDictionary[userMovieChoice]["age"] and movieDictionary[userMovieChoice]["seats"] == 0:
+            print ("sorry there are not enough seats, please pick another movie")
+
+        else:
+            print("Please enjoy the movie")
+            movieDictionary[userMovieChoice]["seats"] = movieDictionary[userMovieChoice]["seats"] - 1
     else:
-        print("Please enjoy the movie")
+        print("That film is not available,please enter another movie")
