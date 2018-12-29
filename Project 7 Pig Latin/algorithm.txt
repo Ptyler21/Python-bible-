@@ -1,0 +1,14 @@
+vowels: a e i o u,y 
+
+constanants: everything else
+
+what I would like the program to do: 
+
+look through a sentence for words that start with vowels or constanants
+
+if they are found convert them to pig latin form 
+
+if the word starts with a vowel simply add yay to the end of the word 
+
+if the word starts with a consonant move the first two letters to the end 
+and ad yay 
