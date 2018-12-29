@@ -1,14 +1,18 @@
-vowels: a e i o u,y 
+vowels: a e i o u,y
 
-constanants: everything else
+consonants: everything else
 
-what I would like the program to do: 
+what I would like the program to do:
 
-look through a sentence for words that start with vowels or constanants
+look through a sentence for words that start with vowels or consonants
+-how can the program tell when it has a word?
+  -put the sentence into a list
+  -I want to know if anywords start with aeiouy
+    -
 
-if they are found convert them to pig latin form 
+if they are found convert them to pig latin form
 
-if the word starts with a vowel simply add yay to the end of the word 
+if the word starts with a vowel simply add yay to the end of the word
 
-if the word starts with a consonant move the first two letters to the end 
-and ad yay 
+if the word starts with a consonant move the first two letters to the end
+and ad yay
