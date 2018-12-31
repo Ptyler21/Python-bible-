@@ -1,5 +1,5 @@
 
-sentence = "will you go with me to the ball to eat curry?"
+sentence = input("give me a sentence: ").strip().lower()
 pigTestList = sentence.split()
 vowelList = ("a","e","i","o","u","y")
 for word in range(len(pigTestList)):
@@ -8,7 +8,7 @@ for word in range(len(pigTestList)):
 
     elif pigTestList[word] != pigTestList[word].startswith(vowelList[0:]):
         if len(pigTestList[word]) >= 3:
-            firstTwoLetterStrip = pigTestList[word].lstrip(pigTestList[word][0:2]).strip("?")
+            firstTwoLetterStrip = pigTestList[word].lstrip(pigTestList[word][0:2]).strip("?!.")
             firstTwoLetterStorage = pigTestList[word][0:2]
             largerThanThreeConcat = firstTwoLetterStrip + firstTwoLetterStorage.rstrip('?') + "yay"
             pigTestList[word] = largerThanThreeConcat
