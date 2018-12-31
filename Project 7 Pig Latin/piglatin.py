@@ -8,26 +8,13 @@ vowelList = ("a","e","i","o","u","y")
 
 for word in range(len(pigTestList)):
     if pigTestList[word].startswith(vowelList[0:]):
-        vowelsFound = pigTestList[word] + "yay"
+        pigTestList[word] = pigTestList[word] + "yay"
+
     elif pigTestList[word] != pigTestList[word].startswith(vowelList[0:]):
-        consonantsFound = pigTestList[word]
-        #print(type(consonantsFound))
-        print(consonantsFound[0])
-        print(consonantsFound[1])
-        '''
-        if len(consonantsFound) > 3:
-            #print(consonantsFound,",greater than three letters")
-            for i in range(len(consonantsFound)):
-                print(consonantsFound[0], ", the first char of the word")
-                print(consonantsFound[1], ", the second char of the word")
-        '''
-        #elif len(consonantsFound) < 3:
-            #print(consonantsFound, ", less than three characters")
-
-
-
-        #get the index of the words that return true
-        #list.index()
-        #print(pigTestList.index(word))
-        #word = word + "yay"
-        #print(word)
+        if len(pigTestList[word]) > 3:
+            #need to take the first two letters and move them to the end of the word
+            #the strings within this for loop art strings
+            deals = pigTestList[word].lstrip(pigTestList[word][0:2])
+            doneDeal = pigTestList[word][0:2]#taken out the first two letters from each word
+            finalProduct = deals + doneDeal + "yay"
+            pigTestList[word] = finalProduct
