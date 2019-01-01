@@ -2,22 +2,30 @@
 sentence = input("give me a sentence: ").strip().lower()
 pigTestList = sentence.split()
 vowelList = ("a","e","i","o","u","y")
-for word in range(len(pigTestList)):
-    if pigTestList[word].startswith(vowelList[0:]):
-        pigTestList[word] = pigTestList[word] + "yay"
+pigLatinList = list()
+for word in pigTestList:
+    if word[0] in "aeiou":
+        newPigLatinWord = word + "yay"
+        pigLatinList.append(newPigLatinWord)
+    else:
+        #start counting vowels in words
+        vowelCounter = 0
+        for letter in word:
+            #look for letters that are consonants
+            if letter not in "aeiou":
+                vowelCounter += 1
+            #but if you do find a vowel stop
+            else:
+                break
+        consonants = word[:vowelCounter]
+        restOfWord = word[vowelCounter:]
+        newPigLatinWord = restOfWord + consonants + "ay"
+        pigLatinList.append(newPigLatinWord)
 
-    elif pigTestList[word] != pigTestList[word].startswith(vowelList[0:]):
-        if len(pigTestList[word]) >= 3:
-            firstTwoLetterStrip = pigTestList[word].lstrip(pigTestList[word][0:2]).strip("?!.")
-            firstTwoLetterStorage = pigTestList[word][0:2]
-            largerThanThreeConcat = firstTwoLetterStrip + firstTwoLetterStorage.rstrip('?') + "yay"
-            pigTestList[word] = largerThanThreeConcat
-        elif len(pigTestList[word]) < 3:
-            firstLetterStorage = pigTestList[word][0]
-            secondLetterStorage = pigTestList[word][1]
-            twoWordReverse = secondLetterStorage + firstLetterStorage + "yay"
-            pigTestList[word] = twoWordReverse
-
-finalSentence = ' '.join(letter for letter in pigTestList)
-
+finalSentence = ' '.join(letters for letters in pigLatinList)
 print(finalSentence)
+
+
+#finalSentence = ' '.join(letter for letter in pigTestList)
+
+#print(finalSentence)
