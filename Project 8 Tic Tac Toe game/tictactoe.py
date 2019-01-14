@@ -25,9 +25,21 @@ def movement(icon):
 
     else:
         print("the space is taken")
+
+def checkForWinner(board):
+    counter = 0
+    for i in board[0:3]:
+        if "X" in i:
+            counter += 1
+    return(counter)
+    
 while True:
     printGameBoard()
     movement("X")
+    if checkForWinner(board) == 3:
+        print("player 1 has Won")
+        break
     printGameBoard()
     movement("Y")
     printGameBoard()
+    #checkForWinner(board)
