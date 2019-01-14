@@ -10,13 +10,24 @@ def printGameBoard():
     print(rowTwo)
     print(rowThree)
 
+def movement(icon):
+    if icon == "X":
+        playerNumber = 1
+    elif icon == "Y":
+        playerNumber = 2
+
+    print("please go player {}".format(playerNumber))
+
+    playerInput = int(input("please give me a number(1-9): "))
+
+    if board[playerInput-1] == " ":
+        board[playerInput -1] = icon
+
+    else:
+        print("the space is taken")
 while True:
     printGameBoard()
-    userPosition = int(input("pick a board position(1-9): "))
-    userPiece = "X"
-    if board[userPosition - 1] == " ":
-        board[userPosition -1] = "X"
-    print("now it's the AI turn")
-    if
-    else:
-        print("the space is taken!"
+    movement("X")
+    printGameBoard()
+    movement("Y")
+    printGameBoard()
