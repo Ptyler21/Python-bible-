@@ -9,7 +9,8 @@ def playerMovement(board,icon):
     elif icon == "Y":
         playerNumber = 2
 
-    print("It's Your turn player {} ").format(playerNumber)
+    playerReminder = "It's Your turn player {} ".format(playerNumber)
+    print(playerReminder)
 
     playerPositioning = int(input("please give me a number(1-9): "))
 
@@ -17,15 +18,63 @@ def playerMovement(board,icon):
         board[playerPositioning -1 ] = icon
 
 def checkForFullBoard():
+    global board
     counter = 0
     for i in board:
         if i == "X" or i == "Y":
             counter += 1
-    if counter == 8:
+    if counter == 9:
         print("clearing gameboard")
-        global board
         board = [" " for i in range(9)]
     return (board)
+
+def victoryCheck():
+    global board
+    counter = 0
+    for i in board[0:3]:
+        if "X" in i:
+            counter +=1
+            if counter == 3:
+                print("player one has won")
+                board = [" " for i in range(9)]
+                return (board)
+    for i in board[3:6]:
+        if "X" in i:
+            counter +=1
+            if counter == 3:
+                print("player one has won")
+                board = [" " for i in range(9)]
+                return (board)
+    for i in board[6:9]:
+        if "X" in i:
+            counter +=1
+            if counter == 3:
+                print("player one has won")
+                board = [" " for i in range(9)]
+                return (board)
+    # for Y inside of board
+    for i in board[0:3]:
+        if "Y" in i:
+            counter +=1
+            if counter == 3:
+                print("player Two has won")
+                board = [" " for i in range(9)]
+                return (board)
+    for i in board[3:6]:
+        if "Y" in i:
+            counter +=1
+            if counter == 3:
+                print("player Two has won")
+                board = [" " for i in range(9)]
+                return (board)
+    for i in board[6:9]:
+        if "Y" in i:
+            counter +=1
+            if counter == 3:
+                print("player Two has won")
+                board = [" " for i in range(9)]
+                return (board)
+    
 
 while True:
     playerMovement(board,"X")
@@ -33,3 +82,4 @@ while True:
     playerMovement(board,"Y")
     printgameboard(board)
     checkForFullBoard()
+    victoryCheck()
