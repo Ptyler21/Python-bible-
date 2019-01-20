@@ -2,20 +2,30 @@
 import gameboard as f1
 from gameboard import board
 from gameboard import printgameboard
+import random
+
+#basically main
 
 def playerMovement(board,icon):
     if icon == "X":
         playerNumber = 1
+    '''
     elif icon == "Y":
         playerNumber = 2
-
+    '''
     playerReminder = "It's Your turn player {} ".format(playerNumber)
     print(playerReminder)
 
-    playerPositioning = int(input("please give me a number(1-9): "))
+    playerOnePositioning = int(input("please give me a number(1-9): "))
 
-    if board[playerPositioning - 1] == " ":
-        board[playerPositioning -1 ] = icon
+
+    if board[playerOnePositioning - 1] == " ":
+        board[playerOnePositioning -1 ] = icon
+
+def computerMovement(board,icon):
+    playerTwoPosition = random.randint(1,9)
+    if board[playerTwoPosition -1 ] == " ":
+        board[playerTwoPosition - 1] = icon
 
 def checkForFullBoard():
     global board
@@ -28,58 +38,93 @@ def checkForFullBoard():
         board = [" " for i in range(9)]
     return (board)
 
-def victoryCheck():
+def victoryCheck(icon):
     global board
-    counter = 0
-    for i in board[0:3]:
-        if "X" in i:
-            counter +=1
-            if counter == 3:
-                print("player one has won")
-                board = [" " for i in range(9)]
-                return (board)
-    for i in board[3:6]:
-        if "X" in i:
-            counter +=1
-            if counter == 3:
-                print("player one has won")
-                board = [" " for i in range(9)]
-                return (board)
-    for i in board[6:9]:
-        if "X" in i:
-            counter +=1
-            if counter == 3:
-                print("player one has won")
-                board = [" " for i in range(9)]
-                return (board)
-    # for Y inside of board
-    for i in board[0:3]:
-        if "Y" in i:
-            counter +=1
-            if counter == 3:
-                print("player Two has won")
-                board = [" " for i in range(9)]
-                return (board)
-    for i in board[3:6]:
-        if "Y" in i:
-            counter +=1
-            if counter == 3:
-                print("player Two has won")
-                board = [" " for i in range(9)]
-                return (board)
-    for i in board[6:9]:
-        if "Y" in i:
-            counter +=1
-            if counter == 3:
-                print("player Two has won")
-                board = [" " for i in range(9)]
-                return (board)
-    
+
+    if board[0] == icon and board[1]  == icon and board[2] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+    elif board[3] == icon and board[4] == icon and board[5] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+    elif board[6] == icon and board[7] == icon and board[8] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+
+    elif board[0] == icon and board[3] == icon and board[6] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+    elif board[1] == icon and board[4] == icon and board[7] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+    elif board[2] == icon and board[5] == icon and board[8] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        board = [" " for i in range(9)]
+        return(board)
+    elif board[0] == icon and board[4] == icon and board[8] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        board = [" " for i in range(9)]
+        print(victoryNotif)
+        return(board)
+    elif board[2] == icon and board[4] == icon and board[6] == icon:
+        if icon == "X":
+            player = 1
+        elif icon == "Y":
+            player = 2
+        victoryNotif = "Player {} has won".format(player)
+        print(victoryNotif)
+        boar = [" " for i in range(9)]
+        return(board)
+
+
+
 
 while True:
     playerMovement(board,"X")
     printgameboard(board)
-    playerMovement(board,"Y")
+    victoryCheck("X")
+    computerMovement(board,"Y")
+    #playerMovement(board,"Y")
     printgameboard(board)
+    victoryCheck("Y")
     checkForFullBoard()
-    victoryCheck()
+    #victoryCheck()
