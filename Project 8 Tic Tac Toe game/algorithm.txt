@@ -1,0 +1,13 @@
+What I would like the program to do:
+
+1. The program will ask the user if they wish to be x or o
+ -if the user picks x then their specfic variable is x
+2. the program will then ask the user to pick a spot on the board
+  -the icon that the user chose will then be put in place
+3. The program will then also choose a spot.
+  -it must be a spot that the player isn't already in
+
+win condition
+1. the player should be able to win if they get three pieces in corresponding
+spaces.
+2. the Ai should win with the same method

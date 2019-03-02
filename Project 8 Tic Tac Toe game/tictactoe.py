@@ -39,6 +39,15 @@ def checkForWinner(board,piece):
             counter += 1
 
     return(counter)
+roller = 0
+def clearBoard(board,roller):
+    for i in board:
+        if "X" in i:
+            roller += 1
+        elif "Y" in i:
+            roller += 1
+    if roller == 9:
+        board = [" " for i in range(9)]
 while True:
     printGameBoard()
     movement("X")
@@ -50,5 +59,6 @@ while True:
     if checkForWinner(board,"Y") == 3:
         print("player 2 has won")
         break
+    clearBoard(board,roller)
     printGameBoard()
     #checkForWinner(board)
