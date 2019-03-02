@@ -1,0 +1,46 @@
+#the psuedocode for tic-tac-toe.py
+
+gameboard = list of 9 empty strings
+
+print the gameboard function
+  row one of gameboard
+  row two of gameboard
+  row three of gameboard
+
+player movement function (icon variable)
+  if player icon is "x"
+    their number is 1
+  if player icon is "O"
+    their number is 2
+
+  print"your turn player {number}"
+
+position = input("please choose a position (1-9): ")
+
+if board[postion -1 ] is empty
+  board[position -1 ] = player icon
+
+else
+  print "the space if filled"
+
+check for winner function(board,piece)
+  counter = 0
+  for i inside of board[any range]:
+    if piece in i equals 3
+      counter = counter + 1
+  return (counter)
+
+boardClearFunction
+
+while loop
+  print the gameboard
+  print player movement for x
+  check for winner function equals 3
+    print "player one has won"
+    break out of the loop
+  print the gameboard
+  print the player movement for y
+  check for winner function equals 3
+    print "player two has won"
+    break out of loop
+  print the gameboard
